@@ -25,6 +25,7 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
+import employeerostering.employeerostering.EmployeeRoster;
 
 public class SolverTest {
 
@@ -36,10 +37,10 @@ public class SolverTest {
                                                                 "employeerostering/employeerostering/testSolverConfig.solver.xml");
         Solver<EmployeeRoster> solver = solverFactory.buildSolver();
 
-        solver.solve(getSolution());
+        //solver.solve(getSolution());
     }
 
-    private EmployeeRoster getSolution() {
+    /*private EmployeeRoster getSolution() {
         Skill skill = new Skill("chess");
         Employee employee = new Employee("Matej",
                                          Arrays.asList(skill));
@@ -62,5 +63,5 @@ public class SolverTest {
                                   Collections.emptyList(),
                                   Collections.emptyList(),
                                   null);
-    }
+    }*/
 }
