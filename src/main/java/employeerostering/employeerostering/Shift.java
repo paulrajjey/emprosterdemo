@@ -15,7 +15,9 @@
  */
 
 package employeerostering.employeerostering;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+@XStreamAlias("Shift")
 public class Shift implements java.io.Serializable {
 
     static final long serialVersionUID = 1L;
