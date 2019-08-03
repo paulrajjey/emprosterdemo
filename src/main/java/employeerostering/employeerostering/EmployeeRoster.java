@@ -15,12 +15,13 @@
  */
 
 package employeerostering.employeerostering;
-
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 @XStreamAlias("ShiftAssignment")
 @org.optaplanner.core.api.domain.solution.PlanningSolution(autoDiscoverMemberType = org.optaplanner.core.api.domain.autodiscover.AutoDiscoverMemberType.FIELD)
 @javax.xml.bind.annotation.XmlRootElement
 @javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)
+
 public class EmployeeRoster implements java.io.Serializable {
 
     static final long serialVersionUID = 1L;
