@@ -15,12 +15,15 @@
  */
 
 package employeerostering.employeerostering;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+@XStreamAlias("Timeslot")
 /**
  * TODO Remove @XStreamConverter for java.time attributes once converters are provided by XStream out of the box.
  *
  * @see <a href="https://github.com/x-stream/xstream/issues/75">XStream#75</a>
  */
+
 public class Timeslot implements java.io.Serializable {
 
     static final long serialVersionUID = 1L;
