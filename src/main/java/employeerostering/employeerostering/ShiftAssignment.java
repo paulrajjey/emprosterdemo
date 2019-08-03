@@ -15,7 +15,9 @@
  */
 
 package employeerostering.employeerostering;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+@XStreamAlias("ShiftAssignment")
 @org.optaplanner.core.api.domain.entity.PlanningEntity
 public class ShiftAssignment implements java.io.Serializable {
 
