@@ -16,43 +16,58 @@
 
 package employeerostering.employeerostering;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-@XStreamAlias("DayOffRequest")
+
+@com.thoughtworks.xstream.annotations.XStreamAlias("DayOffRequest")
 public class DayOffRequest implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    private employeerostering.employeerostering.Employee employee;
-    /**
-     * TODO Remove @XStreamConverter when java.time converters are provided by XStream out of the box.
-     *
-     * @see <a href="https://github.com/x-stream/xstream/issues/75">XStream#75</a>
-     */
-    @com.thoughtworks.xstream.annotations.XStreamConverter(org.kie.soup.commons.xstream.LocalDateXStreamConverter.class)
-    private java.time.LocalDate date;
+	private employeerostering.employeerostering.Employee employee;
+	/**
+	 * TODO Remove @XStreamConverter when java.time converters are provided by
+	 * XStream out of the box.
+	 *
+	 * @see <a
+	 *      href="https://github.com/x-stream/xstream/issues/75">XStream#75</a>
+	 */
+	@com.thoughtworks.xstream.annotations.XStreamConverter(org.kie.soup.commons.xstream.LocalDateXStreamConverter.class)
+	private java.time.LocalDate date;
 
-    public DayOffRequest() {
-    }
+	private java.lang.String type;
 
-    public employeerostering.employeerostering.Employee getEmployee() {
-        return this.employee;
-    }
+	public DayOffRequest() {
+	}
 
-    public void setEmployee( employeerostering.employeerostering.Employee employee ) {
-        this.employee = employee;
-    }
+	public employeerostering.employeerostering.Employee getEmployee() {
+		return this.employee;
+	}
 
-    public java.time.LocalDate getDate() {
-        return this.date;
-    }
+	public void setEmployee(
+			employeerostering.employeerostering.Employee employee) {
+		this.employee = employee;
+	}
 
-    public void setDate( java.time.LocalDate date ) {
-        this.date = date;
-    }
+	public java.time.LocalDate getDate() {
+		return this.date;
+	}
 
-    public DayOffRequest( employeerostering.employeerostering.Employee employee,
-                          java.time.LocalDate date ) {
-        this.employee = employee;
-        this.date = date;
-    }
+	public void setDate(java.time.LocalDate date) {
+		this.date = date;
+	}
+
+	public java.lang.String getType() {
+		return this.type;
+	}
+
+	public void setType(java.lang.String type) {
+		this.type = type;
+	}
+
+	public DayOffRequest(employeerostering.employeerostering.Employee employee,
+			java.time.LocalDate date, java.lang.String type) {
+		this.employee = employee;
+		this.date = date;
+		this.type = type;
+	}
 
 }
