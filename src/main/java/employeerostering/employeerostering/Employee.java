@@ -17,39 +17,51 @@
 package employeerostering.employeerostering;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XStreamAlias("Employee")
+@com.thoughtworks.xstream.annotations.XStreamAlias("Employee")
 public class Employee implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    private java.lang.String name;
-    private java.util.List<employeerostering.employeerostering.Skill> skills;
+	private java.lang.String name;
+	private java.util.List<employeerostering.employeerostering.Skill> skills;
 
-    public Employee() {
-    }
+	private employeerostering.employeerostering.DayOffRequest dayOffRequest;
 
-    public java.lang.String getName() {
-        return this.name;
-    }
+	public Employee() {
+	}
 
-    public void setName( java.lang.String name ) {
-        this.name = name;
-    }
+	public java.lang.String getName() {
+		return this.name;
+	}
 
-    public java.util.List<employeerostering.employeerostering.Skill> getSkills() {
-        return this.skills;
-    }
+	public void setName(java.lang.String name) {
+		this.name = name;
+	}
 
-    public void setSkills(
-            java.util.List<employeerostering.employeerostering.Skill> skills ) {
-        this.skills = skills;
-    }
+	public java.util.List<employeerostering.employeerostering.Skill> getSkills() {
+		return this.skills;
+	}
 
-    public Employee( java.lang.String name,
-                     java.util.List<employeerostering.employeerostering.Skill> skills ) {
-        this.name = name;
-        this.skills = skills;
-    }
+	public void setSkills(
+			java.util.List<employeerostering.employeerostering.Skill> skills) {
+		this.skills = skills;
+	}
 
+	public employeerostering.employeerostering.DayOffRequest getDayOffRequest() {
+		return this.dayOffRequest;
+	}
+
+	public void setDayOffRequest(
+			employeerostering.employeerostering.DayOffRequest dayOffRequest) {
+		this.dayOffRequest = dayOffRequest;
+	}
+
+	public Employee(java.lang.String name,
+			java.util.List<employeerostering.employeerostering.Skill> skills,
+			employeerostering.employeerostering.DayOffRequest dayOffRequest) {
+		this.name = name;
+		this.skills = skills;
+		this.dayOffRequest = dayOffRequest;
+	}
 
 }
