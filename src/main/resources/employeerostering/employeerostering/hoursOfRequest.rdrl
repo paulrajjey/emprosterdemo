@@ -1,0 +1,12 @@
+package employeerostering.employeerostering;
+
+import java.lang.Number;
+
+rule "hoursOfRequest"
+	dialect "mvel"
+	when
+		ShiftAssignment( employee != null , dayOfRequest != null , shift.timeslot.startTime.toLocalDate() == ( dayOfRequest.date ) , dayOfRequest.type == "H" )
+	then
+		scoreHolder.addSoftConstraintMatch(kcontext, -100);
+		System.out.println("daya request off");
+end
