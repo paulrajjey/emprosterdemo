@@ -1,0 +1,12 @@
+package employeerostering.employeerostering;
+
+import java.lang.Number;
+
+rule "hrsOffRequestMore than thresold"
+	dialect "mvel"
+	when
+		ShiftAssignment( employee != null , dayOfReq : employee.dayOffRequest != null , shift.timeslot.startTime.toLocalDate() == ( dayOfReq.date ) , employee.dayOffRequest.type == "H" , employee.dayOffRequest.timeOffHrs <= 2 )
+	then
+		scoreHolder.addSoftConstraintMatch(kcontext, 1);
+		System.out.println("hrs request off");
+end
