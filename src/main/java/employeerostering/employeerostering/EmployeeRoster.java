@@ -34,7 +34,6 @@ public class EmployeeRoster implements java.io.Serializable {
 	private java.util.List<employeerostering.employeerostering.Skill> skillList;
 	private java.util.List<employeerostering.employeerostering.Timeslot> timeslotList;
 	@org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty
-	@org.optaplanner.core.api.domain.valuerange.ValueRangeProvider(id = "datofRequestRange")
 	private java.util.List<employeerostering.employeerostering.DayOffRequest> dayOffRequestList;
 	private java.util.List<employeerostering.employeerostering.ShiftAssignment> shiftAssignmentList;
 
