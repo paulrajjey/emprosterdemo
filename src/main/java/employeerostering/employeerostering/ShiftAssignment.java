@@ -17,39 +17,54 @@
 package employeerostering.employeerostering;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XStreamAlias("ShiftAssignment")
+@com.thoughtworks.xstream.annotations.XStreamAlias("ShiftAssignment")
 @org.optaplanner.core.api.domain.entity.PlanningEntity
 public class ShiftAssignment implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    private employeerostering.employeerostering.Shift shift;
-    @org.optaplanner.core.api.domain.variable.PlanningVariable(valueRangeProviderRefs = { "employeeRange" })
-    private employeerostering.employeerostering.Employee employee;
+	private employeerostering.employeerostering.Shift shift;
+	@org.optaplanner.core.api.domain.variable.PlanningVariable(valueRangeProviderRefs = {"employeeRange"})
+	private employeerostering.employeerostering.Employee employee;
 
-    public ShiftAssignment() {
-    }
+	@org.optaplanner.core.api.domain.variable.PlanningVariable(valueRangeProviderRefs = {"dayofRequestRange"})
+	private employeerostering.employeerostering.DayOffRequest dayofRequest;
 
-    public employeerostering.employeerostering.Shift getShift() {
-        return this.shift;
-    }
+	public ShiftAssignment() {
+	}
 
-    public void setShift( employeerostering.employeerostering.Shift shift ) {
-        this.shift = shift;
-    }
+	public employeerostering.employeerostering.Shift getShift() {
+		return this.shift;
+	}
 
-    public employeerostering.employeerostering.Employee getEmployee() {
-        return this.employee;
-    }
+	public void setShift(employeerostering.employeerostering.Shift shift) {
+		this.shift = shift;
+	}
 
-    public void setEmployee( employeerostering.employeerostering.Employee employee ) {
-        this.employee = employee;
-    }
+	public employeerostering.employeerostering.Employee getEmployee() {
+		return this.employee;
+	}
 
-    public ShiftAssignment( employeerostering.employeerostering.Shift shift,
-                            employeerostering.employeerostering.Employee employee ) {
-        this.shift = shift;
-        this.employee = employee;
-    }
+	public void setEmployee(
+			employeerostering.employeerostering.Employee employee) {
+		this.employee = employee;
+	}
+
+	public employeerostering.employeerostering.DayOffRequest getDayofRequest() {
+		return this.dayofRequest;
+	}
+
+	public void setDayofRequest(
+			employeerostering.employeerostering.DayOffRequest dayofRequest) {
+		this.dayofRequest = dayofRequest;
+	}
+
+	public ShiftAssignment(employeerostering.employeerostering.Shift shift,
+			employeerostering.employeerostering.Employee employee,
+			employeerostering.employeerostering.DayOffRequest dayofRequest) {
+		this.shift = shift;
+		this.employee = employee;
+		this.dayofRequest = dayofRequest;
+	}
 
 }
