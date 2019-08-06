@@ -23,4 +23,5 @@ rule "Employee10HourShiftSpace"
                 $shiftEndDateTime.until(shift.timeslot.startTime, java.time.temporal.ChronoUnit.HOURS) <10)
     then
         scoreHolder.addHardConstraintMatch(kcontext, -1);
+        System.out.println("Employee10HourShiftSpace");
 end
