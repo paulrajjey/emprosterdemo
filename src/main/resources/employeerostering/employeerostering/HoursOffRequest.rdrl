@@ -6,7 +6,8 @@ rule "HoursOffRequest"
 	dialect "mvel"
 	when
 		$dayOffRequest : DayOffRequest( date != null , type == "H")
-																		ShiftAssignment( employee == $dayOffRequest.employee  ,  shift.timeslot.startTime.toLocalDate() == $dayOffRequest.date  , eval( $dayOffRequest.timeOffHrs > 2.0) )
+		ShiftAssignment( employee == $dayOffRequest.employee  ,  shift.timeslot.startTime.toLocalDate() == $dayOffRequest.date  , eval( $dayOffRequest.timeOffHrs > 2.0) )
 	then
 		scoreHolder. addHardConstraintMatch(kcontext, -100);
+		System.out.println("hours off rule fired");
 end
