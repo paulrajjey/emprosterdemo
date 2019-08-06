@@ -33,7 +33,7 @@ public class DayOffRequest implements java.io.Serializable {
 	@com.thoughtworks.xstream.annotations.XStreamConverter(org.kie.soup.commons.xstream.LocalDateXStreamConverter.class)
 	private java.time.LocalDate date;
 
-	private java.lang.String type="FULL";
+	private java.lang.String type;
 
 	public DayOffRequest() {
 	}
