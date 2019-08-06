@@ -17,6 +17,9 @@
 package employeerostering.employeerostering;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+
 @XStreamAlias("EmployeeRoster")
 @org.optaplanner.core.api.domain.solution.PlanningSolution(autoDiscoverMemberType = org.optaplanner.core.api.domain.autodiscover.AutoDiscoverMemberType.FIELD)
 @javax.xml.bind.annotation.XmlRootElement
@@ -31,6 +34,7 @@ public class EmployeeRoster implements java.io.Serializable {
     private java.util.List<employeerostering.employeerostering.Shift> shiftList;
     private java.util.List<employeerostering.employeerostering.Skill> skillList;
     private java.util.List<employeerostering.employeerostering.Timeslot> timeslotList;
+    @ProblemFactCollectionProperty
     private java.util.List<employeerostering.employeerostering.DayOffRequest> dayOffRequestList;
     private java.util.List<employeerostering.employeerostering.ShiftAssignment> shiftAssignmentList;
 
