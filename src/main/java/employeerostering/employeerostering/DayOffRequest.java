@@ -35,6 +35,10 @@ public class DayOffRequest implements java.io.Serializable {
 
 	private java.lang.String type;
 
+	private java.time.LocalTime startTime;
+
+	private java.time.LocalTime endTime;
+
 	public DayOffRequest() {
 	}
 
@@ -63,11 +67,30 @@ public class DayOffRequest implements java.io.Serializable {
 		this.type = type;
 	}
 
+	public java.time.LocalTime getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(java.time.LocalTime startTime) {
+		this.startTime = startTime;
+	}
+
+	public java.time.LocalTime getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(java.time.LocalTime endTime) {
+		this.endTime = endTime;
+	}
+
 	public DayOffRequest(employeerostering.employeerostering.Employee employee,
-			java.time.LocalDate date, java.lang.String type) {
+			java.time.LocalDate date, java.lang.String type,
+			java.time.LocalTime startTime, java.time.LocalTime endTime) {
 		this.employee = employee;
 		this.date = date;
 		this.type = type;
+		this.startTime = startTime;
+		this.endTime = endTime;
 	}
 
 }
