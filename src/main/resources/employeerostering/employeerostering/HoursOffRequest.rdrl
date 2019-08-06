@@ -9,5 +9,5 @@ rule "fired");"
 		ShiftAssignment( employee == $dayOffRequest.employee  ,  shift.timeslot.startTime.toLocalDate() == $dayOffRequest.date  , eval( $dayOffRequest.timeOffHrs > 2.0) )
 	then
 		scoreHolder. addHardConstraintMatch(kcontext, -100);
-				System.out.println("Hour off rule fired");
+		System.out.println("Hour off rule fired");
 end
