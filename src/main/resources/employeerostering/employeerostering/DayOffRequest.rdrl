@@ -5,8 +5,8 @@ import java.lang.Number;
 rule "DayOffRequest"
 	dialect "mvel"
 	when
-		$dayOffRequest : DayOffRequest( date != null , type == "H")
-						ShiftAssignment( employee == $dayOffRequest.employee  ,  shift.timeslot.startTime.toLocalDate() == $dayOffRequest.date )
+		$dayOffRequest : DayOffRequest( date != null , type == "F")
+								ShiftAssignment( employee == $dayOffRequest.employee  ,  shift.timeslot.startTime.toLocalDate() == $dayOffRequest.date )
 	then
 		scoreHolder.addSoftConstraintMatch(kcontext, -100);
 end
