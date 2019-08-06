@@ -123,5 +123,12 @@ public class DayOffRequest implements java.io.Serializable {
 		this.date = date;
 		this.type = type;
 	}
+	public DayOffRequest(
+			java.time.LocalDate date, java.lang.String type
+			) {
+		this.employee = employee;
+		this.date = date;
+		this.type = type;
+	}
 
 }
