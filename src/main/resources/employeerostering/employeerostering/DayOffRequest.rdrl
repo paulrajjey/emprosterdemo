@@ -2,12 +2,12 @@ package employeerostering.employeerostering;
 
 import java.lang.Number;
 
-rule "DayOffRequest"
+rule "fired");"
 	dialect "mvel"
 	when
 		$dayOffRequest : DayOffRequest( date != null , type == "F")
-										ShiftAssignment( employee == $dayOffRequest.employee  ,  shift.timeslot.startTime.toLocalDate() == $dayOffRequest.date )
+		ShiftAssignment( employee == $dayOffRequest.employee  ,  shift.timeslot.startTime.toLocalDate() == $dayOffRequest.date )
 	then
 		scoreHolder.addSoftConstraintMatch(kcontext, -100);
-		System.out.println("day off rule fired");
+				System.out.println("day off rule fired");
 end
