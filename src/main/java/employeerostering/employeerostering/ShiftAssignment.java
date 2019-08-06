@@ -27,9 +27,6 @@ public class ShiftAssignment implements java.io.Serializable {
 	@org.optaplanner.core.api.domain.variable.PlanningVariable(valueRangeProviderRefs = {"employeeRange"})
 	private employeerostering.employeerostering.Employee employee;
 
-	@org.optaplanner.core.api.domain.variable.PlanningVariable(valueRangeProviderRefs = {"dayofRequestRange"})
-	private employeerostering.employeerostering.DayOffRequest dayofRequest;
-
 	public ShiftAssignment() {
 	}
 
@@ -50,21 +47,10 @@ public class ShiftAssignment implements java.io.Serializable {
 		this.employee = employee;
 	}
 
-	public employeerostering.employeerostering.DayOffRequest getDayofRequest() {
-		return this.dayofRequest;
-	}
-
-	public void setDayofRequest(
-			employeerostering.employeerostering.DayOffRequest dayofRequest) {
-		this.dayofRequest = dayofRequest;
-	}
-
 	public ShiftAssignment(employeerostering.employeerostering.Shift shift,
-			employeerostering.employeerostering.Employee employee,
-			employeerostering.employeerostering.DayOffRequest dayofRequest) {
+			employeerostering.employeerostering.Employee employee) {
 		this.shift = shift;
 		this.employee = employee;
-		this.dayofRequest = dayofRequest;
 	}
 
 }
