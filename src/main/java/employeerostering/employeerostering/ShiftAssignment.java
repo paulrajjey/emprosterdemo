@@ -29,6 +29,8 @@ public class ShiftAssignment implements java.io.Serializable {
 
 	private employeerostering.employeerostering.DayOffRequest dayOfRequest;
 
+	private java.lang.String notes;
+
 	public ShiftAssignment() {
 	}
 
@@ -58,12 +60,22 @@ public class ShiftAssignment implements java.io.Serializable {
 		this.dayOfRequest = dayOfRequest;
 	}
 
+	public java.lang.String getNotes() {
+		return this.notes;
+	}
+
+	public void setNotes(java.lang.String notes) {
+		this.notes = notes;
+	}
+
 	public ShiftAssignment(employeerostering.employeerostering.Shift shift,
 			employeerostering.employeerostering.Employee employee,
-			employeerostering.employeerostering.DayOffRequest dayOfRequest) {
+			employeerostering.employeerostering.DayOffRequest dayOfRequest,
+			java.lang.String notes) {
 		this.shift = shift;
 		this.employee = employee;
 		this.dayOfRequest = dayOfRequest;
+		this.notes = notes;
 	}
 
 }
