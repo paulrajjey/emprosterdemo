@@ -14,7 +14,7 @@ rule "shiftAssignmentWithtimeOffHrsinThresold"
 	when
 		assignment : ShiftAssignment( employee == null , shift : shift, skills : shift.requiredSkill, slot : shift.timeslot)
 		skil : Skill( ) from skills
-		empl : Employee( skills == skil , dayOffRequest == null )
+		empl : Employee( skills == skil , dayOffRequest != null , dayOffRequest.timeOffHrs <= 2 )
 	then
 		assignment.setEmployee( empl );
 		retract( empl );
