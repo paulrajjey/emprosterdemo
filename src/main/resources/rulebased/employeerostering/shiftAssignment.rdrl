@@ -2,6 +2,9 @@ package rulebased.employeerostering;
 
 import java.lang.Number;
 import employeerostering.employeerostering.Shift;
+import employeerostering.employeerostering.DayOffRequest;
+import employeerostering.employeerostering.ShiftAssignment;
+import employeerostering.employeerostering.Employee;
 
 rule "shiftAssignment"
 	dialect "mvel"
