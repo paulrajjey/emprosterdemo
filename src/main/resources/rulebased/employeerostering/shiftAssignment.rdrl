@@ -1,0 +1,9 @@
+package rulebased.employeerostering;
+
+import java.lang.Number;
+
+rule "shiftAssignment"
+	dialect "mvel"
+	when
+	then
+end
