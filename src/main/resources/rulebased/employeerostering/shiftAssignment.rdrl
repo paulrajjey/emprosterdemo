@@ -1,6 +1,7 @@
 package rulebased.employeerostering;
 
 import java.lang.Number;
+import employeerostering.employeerostering.Shift;
 
 rule "shiftAssignment"
 	dialect "mvel"
