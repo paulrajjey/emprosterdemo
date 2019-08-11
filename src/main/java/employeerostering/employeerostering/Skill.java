@@ -17,26 +17,48 @@
 package employeerostering.employeerostering;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XStreamAlias("Skill")
+@com.thoughtworks.xstream.annotations.XStreamAlias("Skill")
 public class Skill implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    private java.lang.String name;
+	private java.lang.String name;
 
-    public Skill() {
-    }
+	private java.lang.String id;
 
-    public java.lang.String getName() {
-        return name;
-    }
+	private int index;
 
-    public void setName( java.lang.String name ) {
-        this.name = name;
-    }
+	public Skill() {
+	}
 
-    public Skill( java.lang.String name ) {
-        this.name = name;
-    }
+	public java.lang.String getName() {
+		return name;
+	}
+
+	public void setName(java.lang.String name) {
+		this.name = name;
+	}
+
+	public java.lang.String getId() {
+		return this.id;
+	}
+
+	public void setId(java.lang.String id) {
+		this.id = id;
+	}
+
+	public int getIndex() {
+		return this.index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	public Skill(java.lang.String name, java.lang.String id, int index) {
+		this.name = name;
+		this.id = id;
+		this.index = index;
+	}
 
 }
