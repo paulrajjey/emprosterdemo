@@ -1,12 +1,12 @@
 <kmodule xmlns="http://www.drools.org/xsd/kmodule" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <kbase name="rule" default="true" eventProcessingMode="stream" equalsBehavior="identity" packages="rulebased.*">
+  <kbase name="rule" default="false" eventProcessingMode="stream" equalsBehavior="identity" packages="rulebased.*">
     <ksession name="rulesession" type="stateless" default="true" clockType="realtime">
       <listeners>
         <agendaEventListener type="employeerostering.employeerostering.RuleAgendaListner"/>
       </listeners>
     </ksession>
   </kbase>
-  <kbase name="solver" default="false" eventProcessingMode="stream" equalsBehavior="identity" packages="employeerostering.*">
-    <ksession name="solversession" type="stateless" default="true" clockType="realtime"/>
+  <kbase name="solver" default="true" eventProcessingMode="stream" equalsBehavior="identity" packages="employeerostering.*">
+    <ksession name="solversession" type="statefull" default="true" clockType="realtime"/>
   </kbase>
 </kmodule>
