@@ -10,8 +10,9 @@ rule "shiftAssignment"
 	dialect "mvel"
 	no-loop true
 	when
-		assignment : ShiftAssignment( employee == null , shift : shift, slot : shift.timeslot, skill : shift.requiredSkill)
+		assignment : ShiftAssignment( employee == null , shift : shift, skill : shift.requiredSkill, slot : shift.timeslot)
 		empl : Employee( skills == skill , dayOffRequest == null || dayOffRequest.timeOffHrs <= 2 )
 	then
 		assignment.setEmployee( empl );
+		retract( empl );
 end
