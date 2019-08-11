@@ -9,7 +9,8 @@ import employeerostering.employeerostering.Employee;
 rule "shiftAssignment"
 	dialect "mvel"
 	when
-		ShiftAssignment( employee == null , shift : shift, skill : shift.requiredSkill, slot : shift.timeslot)
-		Employee( skills == skill , dayOffRequest == null || dayOffRequest.timeOffHrs <= 2 )
+		assignment : ShiftAssignment( employee == null , shift : shift, skill : shift.requiredSkill, slot : shift.timeslot)
+		empl : Employee( skills == skill , dayOffRequest == null || dayOffRequest.timeOffHrs <= 2 )
 	then
+		assignment.setEmployee( empl );
 end
