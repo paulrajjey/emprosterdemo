@@ -7,6 +7,6 @@
     </ksession>
   </kbase>
   <kbase name="solver" default="true" eventProcessingMode="stream" equalsBehavior="identity" packages="employeerostering.*">
-    <ksession name="solversession" type="statefull" default="true" clockType="realtime"/>
+    <ksession name="solversession" type="stateful" default="true" clockType="realtime"/>
   </kbase>
 </kmodule>
