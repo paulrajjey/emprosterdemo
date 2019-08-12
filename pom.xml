@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>employeerostering</groupId>
   <artifactId>employeerostering</artifactId>
-  <version>1.0.7</version>
+  <version>1.0.6</version>
   <packaging>kjar</packaging>
   <name>Employee_Rostering</name>
   <description>Employee rostering problem optimisation using Planner. Assigns employees to shifts based on their skill.</description>
