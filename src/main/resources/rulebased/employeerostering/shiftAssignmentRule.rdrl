@@ -11,9 +11,9 @@ rule "shiftAssignmentRule"
 	dialect "mvel"
 	no-loop true
 	when
-		assignment : ShiftAssignment( skill : shift.requiredSkill, employee == null )
+		assignment : ShiftAssignment( skill : shift.requiredSkill, employee == null , shiftDate : shift.timeslot.startTime)
 		empl : Employee( empSkills : skills)
-		not (DayOffRequest( empId == ( empl.id ) )) 
+		not (DayOffRequest( empId == ( empl.id ) , eval( date. compareTo( shiftDate.toLocalDate() ) == 0 ))) 
 		exists (		Skill( name == ( skill.name ) ) from empSkills
 ) 
 	then
