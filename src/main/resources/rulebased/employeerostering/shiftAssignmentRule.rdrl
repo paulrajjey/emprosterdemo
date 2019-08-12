@@ -17,5 +17,7 @@ rule "shiftAssignmentRule"
 		exists (		Skill( name == ( skill.name ) ) from empSkills
 ) 
 	then
-		assignment.setEmployee( empl );
+		modify( assignment ) {
+				setEmployee( empl )
+		}
 end
