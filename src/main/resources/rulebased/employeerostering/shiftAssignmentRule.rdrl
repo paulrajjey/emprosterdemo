@@ -12,7 +12,7 @@ rule "shiftAssignmentRule"
 	no-loop true
 	when
 		assignment : ShiftAssignment( shift : shift, skill : shift.requiredSkill, slot : shift.timeslot, employee == null )
-		empl : Employee( empSkills : skills, dayOffRequest == null )
+		empl : Employee( empSkills : skills)
 		exists (		Skill( name == ( skill.name ) ) from empSkills
 ) 
 	then
