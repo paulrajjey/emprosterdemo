@@ -41,6 +41,8 @@ public class DayOffRequest implements java.io.Serializable {
 
 	private long timeOffHrs;
 
+	private int empId;
+
 	public DayOffRequest() {
 	}
 
@@ -86,8 +88,9 @@ public class DayOffRequest implements java.io.Serializable {
 	}
 
 	public long getTimeOffHrs() {
-	    
-	    this.timeOffHrs = java.time.temporal.ChronoUnit.HOURS.between(this.startTime, this.endTime);
+
+		this.timeOffHrs = java.time.temporal.ChronoUnit.HOURS.between(
+				this.startTime, this.endTime);
 		return this.timeOffHrs;
 	}
 
@@ -95,19 +98,7 @@ public class DayOffRequest implements java.io.Serializable {
 		this.timeOffHrs = timeOffHrs;
 	}
 
-	public DayOffRequest(employeerostering.employeerostering.Employee employee,
-			java.time.LocalDate date, java.lang.String type,
-			java.time.LocalTime startTime, java.time.LocalTime endTime,
-			long timeOffHrs) {
-		this.employee = employee;
-		this.date = date;
-		this.type = type;
-		this.startTime = startTime;
-		this.endTime = endTime;
-		this.timeOffHrs = timeOffHrs;
-	}
-	public DayOffRequest(
-			java.time.LocalDate date, java.lang.String type,
+	public DayOffRequest(java.time.LocalDate date, java.lang.String type,
 			java.time.LocalTime startTime, java.time.LocalTime endTime) {
 		this.date = date;
 		this.type = type;
@@ -116,8 +107,7 @@ public class DayOffRequest implements java.io.Serializable {
 	}
 	public DayOffRequest(employeerostering.employeerostering.Employee employee,
 			java.time.LocalDate date, java.lang.String type,
-			java.time.LocalTime startTime, java.time.LocalTime endTime
-			) {
+			java.time.LocalTime startTime, java.time.LocalTime endTime) {
 		this.employee = employee;
 		this.date = date;
 		this.type = type;
@@ -125,17 +115,35 @@ public class DayOffRequest implements java.io.Serializable {
 		this.endTime = endTime;
 	}
 	public DayOffRequest(employeerostering.employeerostering.Employee employee,
-			java.time.LocalDate date, java.lang.String type
-			) {
+			java.time.LocalDate date, java.lang.String type) {
 		this.employee = employee;
 		this.date = date;
 		this.type = type;
 	}
-	public DayOffRequest(
-			java.time.LocalDate date, java.lang.String type
-			) {
+	public DayOffRequest(java.time.LocalDate date, java.lang.String type) {
 		this.date = date;
 		this.type = type;
+	}
+
+	public int getEmpId() {
+		return this.empId;
+	}
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+	public DayOffRequest(employeerostering.employeerostering.Employee employee,
+			java.time.LocalDate date, java.lang.String type,
+			java.time.LocalTime startTime, java.time.LocalTime endTime,
+			long timeOffHrs, int empId) {
+		this.employee = employee;
+		this.date = date;
+		this.type = type;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.timeOffHrs = timeOffHrs;
+		this.empId = empId;
 	}
 
 }
