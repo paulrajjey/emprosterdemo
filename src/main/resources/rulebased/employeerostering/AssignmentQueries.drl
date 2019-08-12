@@ -1,9 +1,16 @@
 package rulebased.employeerostering;
 
+import employeerostering.employeerostering.Shift;
+import employeerostering.employeerostering.DayOffRequest;
+import employeerostering.employeerostering.ShiftAssignment;
+import employeerostering.employeerostering.Employee;
+import employeerostering.employeerostering.Skill;
+import java.util.List;
+
 query "Assigned Shifts"
-    assigned : List() from collect employeerostering.employeerostering.ShiftAssignment( employee != null )
+    assigned : List() collect from ShiftAssignment( employee != null)
 end
 
 query "Assigned Shifts"
-    unAssigned : List() from collect employeerostering.employeerostering.ShiftAssignment( employee == null )
+    unAssigned : List() collect from ShiftAssignment( employee == null)
 end
