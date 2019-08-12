@@ -14,7 +14,7 @@ rule "shiftAssignmentRule"
 	when
 		assignment : ShiftAssignment( shift : shift, skill : shift.requiredSkill, slot : shift.timeslot)
 		empl : Employee( empSkills : skills)
-		exists (		Skill( name == "frfrf" ) from empSkills
+		exists (		Skill( name == ( skill.name ) ) from empSkills
 ) 
 	then
 		assignment.setEmployee( empl );
