@@ -13,7 +13,9 @@ rule "shiftAssignmentWithtimeOffHrsinThresold"
 	salience -1
 	when
 		assignment : ShiftAssignment( employee == null , shift : shift, skill : shift.requiredSkill, slot : shift.timeslot)
-		empl : Employee( skills contains ( skill ) , dayOffRequest != null , dayOffRequest.type == "H" , dayOffRequest.timeOffHrs <= 2 )
+		empl : Employee( dayOffRequest != null && dayOffRequest.type == "H" && empSkills : skills != null )
+		exists (		Skill( name == ( skill.name ) ) from empl.skills
+) 
 	then
 		assignment.setEmployee( empl );
 end
