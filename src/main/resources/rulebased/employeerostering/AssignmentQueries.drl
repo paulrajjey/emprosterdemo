@@ -1,2 +1,9 @@
 package rulebased.employeerostering;
 
+query "Assigned Shifts"
+    assigned : List() from collect employeerostering.employeerostering.ShiftAssignment( employee != null )
+end
+
+query "Assigned Shifts"
+    unAssigned : List() from collect employeerostering.employeerostering.ShiftAssignment( employee == null )
+end
