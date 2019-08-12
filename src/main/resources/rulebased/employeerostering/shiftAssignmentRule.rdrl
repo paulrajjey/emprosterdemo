@@ -7,7 +7,7 @@ import employeerostering.employeerostering.ShiftAssignment;
 import employeerostering.employeerostering.Employee;
 import employeerostering.employeerostering.Skill;
 
-rule "shiftAssignment"
+rule "shiftAssignmentRule"
 	dialect "mvel"
 	no-loop true
 	salience -1
