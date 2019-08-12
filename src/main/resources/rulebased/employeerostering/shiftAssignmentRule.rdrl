@@ -10,7 +10,6 @@ import employeerostering.employeerostering.Skill;
 rule "shiftAssignmentRule"
 	dialect "mvel"
 	no-loop true
-	salience -1
 	when
 		assignment : ShiftAssignment( shift : shift, skill : shift.requiredSkill, slot : shift.timeslot, employee == null )
 		empl : Employee( empSkills : skills, dayOffRequest == null )
