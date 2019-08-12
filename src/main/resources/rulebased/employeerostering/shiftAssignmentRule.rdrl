@@ -13,7 +13,7 @@ rule "shiftAssignmentRule"
 	when
 		assignment : ShiftAssignment( skill : shift.requiredSkill, employee == null )
 		empl : Employee( empSkills : skills)
-		not (DayOffRequest( empId == ( empl.id ) )) 
+		not (DayOffRequest( empId == ( empl.id ) , type in ( "H", "F" ) )) 
 		exists (		Skill( name == ( skill.name ) ) from empSkills
 ) 
 	then
