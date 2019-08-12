@@ -8,9 +8,9 @@ import employeerostering.employeerostering.Skill;
 import java.util.List;
 
 query "Assigned Shifts"
-    assigned : List() collect from ShiftAssignment( employee != null)
+    assigned : List() from collect ( ShiftAssignment( employee != null ) )
 end
 
-query "Assigned Shifts"
-    unAssigned : List() collect from ShiftAssignment( employee == null)
+query "unAssigned Shifts"
+    unAssigned : List() from collect ( ShiftAssignment( employee == null ) )
 end
