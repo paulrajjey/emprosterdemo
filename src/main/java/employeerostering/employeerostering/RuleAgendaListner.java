@@ -58,12 +58,12 @@ public class RuleAgendaListner implements AgendaEventListener , java.io.Serializ
 	}
 
 	public void matchCancelled(MatchCancelledEvent arg0) {
-		// TODO Auto-generated method stub
+		System.out.println("Rule cancelled - > " + arg0.getMatch().getRule().getName() );
 
 	}
 
 	public void matchCreated(MatchCreatedEvent arg0) {
-		// TODO Auto-generated method stub
+			System.out.println("Rule mactch created - > " + arg0.getMatch().getRule().getName() );
 
 	}
 
