@@ -19,7 +19,7 @@ public class RuleAgendaListner implements AgendaEventListener , java.io.Serializ
 
    public void afterMatchFired(AfterMatchFiredEvent arg0) {
 
-		System.out.print("Rule Fired - > " + arg0.getMatch().getRule().getName() );
+		System.out.println("Rule Fired - > " + arg0.getMatch().getRule().getName() );
 	}
 
 	public void afterRuleFlowGroupActivated(RuleFlowGroupActivatedEvent arg0) {
