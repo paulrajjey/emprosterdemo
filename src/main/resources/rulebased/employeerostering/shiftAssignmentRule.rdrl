@@ -12,8 +12,10 @@ rule "shiftAssignmentRule"
 	no-loop true
 	salience -1
 	when
-		assignment : ShiftAssignment( employee == null , shift : shift, skill : shift.requiredSkill, slot : shift.timeslot)
-		empl : Employee( skills contains "skill" , dayOffRequest == null )
+		assignment : ShiftAssignment( shift : shift, skill : shift.requiredSkill, slot : shift.timeslot)
+		empl : Employee( empSkills : skills)
+		exists (		Skill( name == "frfrf" ) from empSkills
+) 
 	then
 		assignment.setEmployee( empl );
 end
