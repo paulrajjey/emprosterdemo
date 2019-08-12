@@ -114,11 +114,11 @@ public class DayOffRequest implements java.io.Serializable {
 		this.startTime = startTime;
 		this.endTime = endTime;
 	}
-	public DayOffRequest(employeerostering.employeerostering.Employee employee,
-			java.time.LocalDate date, java.lang.String type) {
-		this.employee = employee;
+	
+	public DayOffRequest(java.time.LocalDate date, java.lang.String type, int empId) {
 		this.date = date;
 		this.type = type;
+		this.empId = empId;
 	}
 	public DayOffRequest(java.time.LocalDate date, java.lang.String type) {
 		this.date = date;
