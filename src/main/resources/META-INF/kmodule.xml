@@ -1,6 +1,6 @@
 <kmodule xmlns="http://www.drools.org/xsd/kmodule" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <kbase name="rule" default="false" eventProcessingMode="stream" equalsBehavior="identity" packages="rulebased.*">
-    <ksession name="rulesession" type="stateless" default="true" clockType="realtime">
+    <ksession name="rulesession" type="stateful" default="true" clockType="realtime">
       <listeners>
         <agendaEventListener type="employeerostering.employeerostering.RuleAgendaListner"/>
       </listeners>
