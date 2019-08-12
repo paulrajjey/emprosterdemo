@@ -12,9 +12,10 @@ rule "shiftAssignmentWithtimeOffHrsinThresold"
 	no-loop true
 	salience -1
 	when
-		assignment : ShiftAssignment( employee == null , shift : shift, skill : shift.requiredSkill, slot : shift.timeslot)
-		empl : Employee( dayOffRequest != null && dayOffRequest.type == "H" && empSkills : skills != null && dayOffRequest.timeOffHrs <= 2 )
-		exists (		Skill( name == ( skill.name ) ) from empl.skills
+		assignment : ShiftAssignment( employee == null , shiftDate : shift.timeslot.startTime)
+		empl : Employee( empSkills : skills != null )
+		DayOffRequest( empId == ( empl.id ) , type == "H" , timeOffHrs <= 2 , eval( date. compareTo( shiftDate. toLocalDate() ) == 0 ))
+		exists (		Skill( name == ( assignment.shift.requiredSkill.name ) ) from empl.skills
 ) 
 	then
 		modify( assignment ) {
