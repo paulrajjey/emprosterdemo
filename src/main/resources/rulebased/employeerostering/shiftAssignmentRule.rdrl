@@ -13,7 +13,7 @@ rule "shiftAssignmentRule"
 	salience -1
 	when
 		assignment : ShiftAssignment( shift : shift, skill : shift.requiredSkill, slot : shift.timeslot)
-		empl : Employee( empSkills : skills)
+		empl : Employee( empSkills : skills, dayOffRequest == null )
 		exists (		Skill( name == ( skill.name ) ) from empSkills
 ) 
 	then
