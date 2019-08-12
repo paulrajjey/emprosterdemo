@@ -13,7 +13,8 @@ rule "shiftAssignmentRule"
 	salience -1
 	when
 		assignment : ShiftAssignment( employee == null , shift : shift, skill : shift.requiredSkill, slot : shift.timeslot)
-		empl : Employee( skills contains "skill" , dayOffRequest == null )
+		empl : Employee( skills contains ( skill ) , dayOffRequest == null )
 	then
 		assignment.setEmployee( empl );
+		retract( empl );
 end
