@@ -16,5 +16,4 @@ rule "shiftAssignmentRule"
 		empl : Employee( skills contains "skill" , dayOffRequest == null )
 	then
 		assignment.setEmployee( empl );
-		retract( empl );
 end
