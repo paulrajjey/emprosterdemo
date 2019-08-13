@@ -10,7 +10,7 @@ import employeerostering.employeerostering.Skill;
 rule "shiftAssignmentWithtimeOffHrsinThresold"
 	dialect "mvel"
 	no-loop true
-	salience -1
+	salience 10
 	when
 		assignment : ShiftAssignment( employee == null , shiftDate : shift.timeslot.startTime)
 		empl : Employee( empSkills : skills != null )
