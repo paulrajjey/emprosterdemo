@@ -35,8 +35,13 @@ public class Timeslot implements java.io.Serializable {
 
     static final long serialVersionUID = 1L;
 
+
     @com.thoughtworks.xstream.annotations.XStreamConverter(org.kie.soup.commons.xstream.LocalDateTimeXStreamConverter.class)
+    @JsonSerialize(using=LocalDateTimeSerializer.class)
+    @JsonDeserialize(using=LocalDateTimeDeserializer.class)
+    @JsonFormat(shape = Shape.STRING)
     private java.time.LocalDateTime startTime;
+
     @com.thoughtworks.xstream.annotations.XStreamConverter(org.kie.soup.commons.xstream.LocalDateTimeXStreamConverter.class)
     @JsonSerialize(using=LocalDateTimeSerializer.class)
     @JsonDeserialize(using=LocalDateTimeDeserializer.class)
