@@ -16,6 +16,12 @@
 
 package employeerostering.employeerostering;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
 
 @com.thoughtworks.xstream.annotations.XStreamAlias("DayOffRequest")
 public class DayOffRequest implements java.io.Serializable {
@@ -35,8 +41,16 @@ public class DayOffRequest implements java.io.Serializable {
 
 	private java.lang.String type;
 
+    @com.thoughtworks.xstream.annotations.XStreamConverter(org.kie.soup.commons.xstream.LocalTimeXStreamConverter.class)
+    @JsonSerialize(using=LocalTimeSerializer.class)
+    @JsonDeserialize(using=LocalTimeDeserializer.class)
+    @JsonFormat(shape = Shape.STRING)
 	private java.time.LocalTime startTime;
 
+    @com.thoughtworks.xstream.annotations.XStreamConverter(org.kie.soup.commons.xstream.LocalDateTimeXStreamConverter.class)
+    @JsonSerialize(using=LocalDateTimeSerializer.class)
+    @JsonDeserialize(using=LocalDateTimeDeserializer.class)
+    @JsonFormat(shape = Shape.STRING)
 	private java.time.LocalTime endTime;
 
 	private long timeOffHrs;
