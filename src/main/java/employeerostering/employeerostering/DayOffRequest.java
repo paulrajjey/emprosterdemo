@@ -108,8 +108,13 @@ public class DayOffRequest implements java.io.Serializable {
 
 	public long getTimeOffHrs() {
 
-		this.timeOffHrs = java.time.temporal.ChronoUnit.HOURS.between(
+        if( this.startTime != null && this.endTime != null ){
+            this.timeOffHrs = java.time.temporal.ChronoUnit.HOURS.between(
 				this.startTime, this.endTime);
+        }else {
+            this.timeOffHrs = 0;
+        }
+		
 		return this.timeOffHrs;
 	}
 
