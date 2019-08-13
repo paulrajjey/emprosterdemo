@@ -24,6 +24,9 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
 
 @com.thoughtworks.xstream.annotations.XStreamAlias("DayOffRequest")
 public class DayOffRequest implements java.io.Serializable {
@@ -39,8 +42,8 @@ public class DayOffRequest implements java.io.Serializable {
 	 *      href="https://github.com/x-stream/xstream/issues/75">XStream#75</a>
 	 */
     @com.thoughtworks.xstream.annotations.XStreamConverter(org.kie.soup.commons.xstream.LocalDateTimeXStreamConverter.class)
-    @JsonSerialize(using=LocalDateTimeSerializer.class)
-    @JsonDeserialize(using=LocalDateTimeDeserializer.class)
+    @JsonSerialize(using=LocalDateSerializer.class)
+    @JsonDeserialize(using=LocalDateDeserializer.class)
     @JsonFormat(shape = Shape.STRING)	private java.time.LocalDate date;
 
 	private java.lang.String type;
