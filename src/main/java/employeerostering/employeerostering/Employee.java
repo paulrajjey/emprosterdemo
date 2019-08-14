@@ -100,5 +100,14 @@ public class Employee implements java.io.Serializable {
 		this.id = id;
 		this.notes = notes;
 	}
+	public Employee(java.lang.String name,
+			java.util.List<employeerostering.employeerostering.Skill> skills,
+			employeerostering.employeerostering.DayOffRequest dayOffRequest,
+			int id) {
+		this.name = name;
+		this.skills = skills;
+		this.dayOffRequest = dayOffRequest;
+		this.id = id;
+	}
 
 }
