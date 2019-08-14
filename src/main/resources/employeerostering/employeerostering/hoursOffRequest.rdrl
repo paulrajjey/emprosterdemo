@@ -9,5 +9,5 @@ rule "hoursOffRequest"
 	then
 		scoreHolder.addSoftConstraintMatch(kcontext, 1);
 		shiftAss.setNotes( "Employee will be 2 hrs late for this shift" );
-		System.out.println("hrs request off");
+		System.out.println("hrs request off" + shiftAss.employee.name);
 end
