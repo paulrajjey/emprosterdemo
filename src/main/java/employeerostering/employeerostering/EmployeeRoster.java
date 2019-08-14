@@ -33,8 +33,6 @@ public class EmployeeRoster implements java.io.Serializable {
 	private java.util.List<employeerostering.employeerostering.Shift> shiftList;
 	private java.util.List<employeerostering.employeerostering.Skill> skillList;
 	private java.util.List<employeerostering.employeerostering.Timeslot> timeslotList;
-	@org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty
-	private java.util.List<employeerostering.employeerostering.DayOffRequest> dayOffRequestList;
 	private java.util.List<employeerostering.employeerostering.ShiftAssignment> shiftAssignmentList;
 
 	@org.kie.api.definition.type.Label("Generated Planner score field")
@@ -91,15 +89,6 @@ public class EmployeeRoster implements java.io.Serializable {
 		this.shiftAssignmentList = shiftAssignmentList;
 	}
 
-	public java.util.List<employeerostering.employeerostering.DayOffRequest> getDayOffRequestList() {
-		return this.dayOffRequestList;
-	}
-
-	public void setDayOffRequestList(
-			java.util.List<employeerostering.employeerostering.DayOffRequest> dayOffRequestList) {
-		this.dayOffRequestList = dayOffRequestList;
-	}
-
 	public HardSoftScore getScore() {
 		return score;
 	}
@@ -114,14 +103,12 @@ public class EmployeeRoster implements java.io.Serializable {
 			java.util.List<employeerostering.employeerostering.Shift> shiftList,
 			java.util.List<employeerostering.employeerostering.Skill> skillList,
 			java.util.List<employeerostering.employeerostering.Timeslot> timeslotList,
-			java.util.List<employeerostering.employeerostering.DayOffRequest> dayOffRequestList,
 			java.util.List<employeerostering.employeerostering.ShiftAssignment> shiftAssignmentList,
 			org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore score) {
 		this.employeeList = employeeList;
 		this.shiftList = shiftList;
 		this.skillList = skillList;
 		this.timeslotList = timeslotList;
-		this.dayOffRequestList = dayOffRequestList;
 		this.shiftAssignmentList = shiftAssignmentList;
 		this.score = score;
 	}
