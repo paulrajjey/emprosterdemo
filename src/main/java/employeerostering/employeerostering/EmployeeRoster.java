@@ -125,5 +125,19 @@ public class EmployeeRoster implements java.io.Serializable {
 		this.shiftAssignmentList = shiftAssignmentList;
 		this.score = score;
 	}
+	public EmployeeRoster(
+			java.util.List<employeerostering.employeerostering.Employee> employeeList,
+			java.util.List<employeerostering.employeerostering.Shift> shiftList,
+			java.util.List<employeerostering.employeerostering.Skill> skillList,
+			java.util.List<employeerostering.employeerostering.Timeslot> timeslotList,
+			java.util.List<employeerostering.employeerostering.ShiftAssignment> shiftAssignmentList,
+			org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore score) {
+		this.employeeList = employeeList;
+		this.shiftList = shiftList;
+		this.skillList = skillList;
+		this.timeslotList = timeslotList;
+		this.shiftAssignmentList = shiftAssignmentList;
+		this.score = score;
+	}
 
 }
