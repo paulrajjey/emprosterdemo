@@ -10,4 +10,7 @@
     <hoursSpentLimit>0</hoursSpentLimit>
     <daysSpentLimit>0</daysSpentLimit>
   </termination>
+  <localSearch xStreamId="5">
+    <localSearchType>TABU_SEARCH</localSearchType>
+  </localSearch>
 </solver>
