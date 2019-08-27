@@ -10,7 +10,11 @@
     <hoursSpentLimit>0</hoursSpentLimit>
     <daysSpentLimit>0</daysSpentLimit>
   </termination>
-  <localSearch xStreamId="5">
+  <constructionHeuristic xStreamId="5">
+    <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+    <entitySorterManner>NONE</entitySorterManner>
+  </constructionHeuristic>
+  <localSearch xStreamId="6">
     <localSearchType>TABU_SEARCH</localSearchType>
   </localSearch>
 </solver>
